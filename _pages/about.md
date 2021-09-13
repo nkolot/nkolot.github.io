@@ -2,23 +2,27 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: <strong>PhD Student</strong>. Computer Vision. Machine Learning.
 
 profile:
   align: right
   image: prof_pic.jpg
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a fifth and final year [Computer Science](https://cis.upenn.edu) PhD student at the [University of Pennsylvania](www.upenn.edu).
+I am a member of [GRASP](grasp.upenn.edu) and my advisor is [Kostas Daniilidis](www.cis.upenn.edu/~kostas).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I work on 3D Computer Vision and more specifically on **model-based** 3D human reconstruction.
+My research has focused on exploiting parametric body models and all available data to push the limits of reconstruction.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Before that I studied Electrical and Computer Engineering at [NTUA](https://www.ece.ntua.gr/en), where I worked with [Petros Maragos](http://cvsp.cs.ntua.gr/maragos/).
+
+In the first half 2020 I was very fortunate to be a visiting PhD student at [Max Planck Institute for Intelligent Systems](https://is.tuebingen.mpg.de/) advised by [Michael Black](https://ps.is.tuebingen.mpg.de/person/black).
+
+Currently I am a Research Intern at [Facebook Reality Labs](https://tech.fb.com/ar-vr/) working with [Minh Vo](https://minhpvo.github.io/).
+
+I am originally from Greece, where I spent most of 2020 and 2021 because of the pandemic. My name in Greek is Νίκος Κολοτούρος.
