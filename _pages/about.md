@@ -26,3 +26,5 @@ In the first half of 2020 I was very fortunate to be a visiting PhD student at [
 Currently I am a Research Intern at [Facebook Reality Labs](https://tech.fb.com/ar-vr/) working with [Minh Vo](https://minhpvo.github.io/).
 
 I am originally from Greece, where I spent most of 2020 and 2021 because of the pandemic. My name in Greek is Νίκος Κολοτούρος.
+
+My younger brother [Giannis](https://github.com/ioankolot) is also a PhD student in Quantum Computing at the University of Edinburgh.
