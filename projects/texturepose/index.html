@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>TexturePose</title>
+
+  	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106409174-1"></script>
+  	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments)};
+  	gtag('js', new Date());
+  	gtag('config', 'UA-106409174-1');
+  	</script>
+    </head>
+    <body class="container" style="max-width:1080px">
+
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-5'>
+                <div class='col text-center'>
+                    <p class="h2 font-weight-normal">TexturePose: Supervising Human Mesh Estimation with Texture Consistency</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='row text-center h5 font-weight-bold mb-4'>
+		    <a class="col-md-4 col-xs-8" href="https://www.seas.upenn.edu/~pavlakos"><span>Georgios Pavlakos*</span></a>
+		    <a class="col-md-4 col-xs-8" href="https://www.seas.upenn.edu/~nkolot"><span>Nikos Kolotouros*</span></a>
+		    <a class="col-md-4 col-xs-8" href="https://www.cis.upenn.edu/~kostas"><span>Kostas Daniilidis</span></a>
+            </div>
+
+
+            <!-- affiliations -->
+            <div class='row text-center' >
+		    <a class="col-md-12 col-xs-12" href="https://www.upenn.edu/"><span>University of Pennsylvania</span></a>
+            </div>
+
+            <div class='row text-center font-weight-light mt-2 mb-2'>
+                <span class="col-md-12 col-xs-12" style="color:#007bff">*Equal contribution</span>
+            </div>
+
+	    <div>
+      	    <video width=100% src="files/texturepose_teaser.mp4" type="video/mp4" autoplay muted loop/>
+	    </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="https://arxiv.org/pdf/1909.12828.pdf" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://arxiv.org/abs/1909.12828" style="margin-right:10px">
+                                <span>[Arxiv]</span>
+                            </a>
+                            <a class="h5" href="files/texturepose-supp.pdf" style="margin-right:10px">
+                                <span>[Supplementary]</span>
+                            </a>
+                            <a class="h5" href="https://github.com/geopavlakos/TexturePose" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/pavlakos2019texturepose.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h4 font-weight-bold '>Abstract</p>
+                    <p> 
+			This work addresses the problem of model-based human pose estimation. Recent approaches have made significant progress towards regressing the parameters of parametric human body models directly from images. Because of the absence of images with 3D shape ground truth, relevant approaches rely on 2D annotations or sophisticated architecture designs. In this work, we advocate that there are more cues we can leverage, which are available for free in natural images, i.e., without getting more annotations, or modifying the network architecture. We propose a natural form of supervision, that capitalizes on the appearance constancy of a person among different frames (or viewpoints). This seemingly insignificant and often overlooked cue goes a long way for model-based pose estimation. The parametric model we employ allows us to compute a texture map for each frame. Assuming that the texture of the person does not change dramatically between frames, we can apply a novel texture consistency loss, which enforces that each point in the texture map has the same texture value across all frames. Since the texture is transferred in this common texture map space, no camera motion computation is necessary, or even an assumption of smoothness among frames. This makes our proposed supervision applicable in a variety of settings, ranging from monocular video, to multi-view images. We benchmark our approach against strong baselines that require the same or even more annotations that we do and we consistently outperform them. Simultaneously, we achieve state-of-the-art results among model-based pose estimation approaches in different benchmarks. The project website with videos, results, and code can be found at https://seas.upenn.edu/~pavlakos/projects/texturepose.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video
+        <div>
+            <hr>
+
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2 mr-3'>Video</p>
+                </div>
+            </div>
+
+
+            <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:560px">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/jqBiv77xC0M" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;"
+                    >
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+	-->
+
+
+        <!-- Architecture, explaination -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>TexturePose</p>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+            <!--
+            <div class='col-md-6 col-sm-6 col-xs-12 mt-4'>
+	    </div>
+	    -->
+            <!--
+                <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-5'>
+                </div>
+	    -->
+                    <p class="text-break">
+      	    	    <img width=100% src="files/texturepose_fig.png"/>
+                    </p>
+                    <p class="text-break">
+		     For simplicity, assume that the input during training consists of two images i, j of the same person.
+		     The main assumption is that the appearance of the person does not change dramatically
+                     across the input images, i.e., the frames come from short monocular videos or from time-synchronized multi-view cameras.
+		     We apply our deep network on both images and estimate the shape of the person.
+		     Subsequently, we project the predicted shape on the image, and after inferring visibility for each point on the surface, we build the texture maps.
+		     The crucial observation, that the appearance of the person remains constant, translates to a texture consistency loss, forcing
+                     the two texture maps to be the same for all surface points that are visible in both images.
+		     This loss acts as supervision for the network and complements other weak losses that are typically used in the training of these regressor networks.
+                    </p>
+            </div>
+
+
+        </div>
+
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+		    <div class='text-left'>
+		    <p>The authors gratefully appreciate support through the following grants: NSF-IIP-1439681 (I/UCRC),
+		    NSF-IIS-1703319, NSF MRI 1626008, ARL RCTA W911NF-10-2-0016,
+		    ONR N00014-17-1-2093, ARL DCIST CRA W911NF-17-2-0181,
+		    the DARPA-SRC C-BRIC, by Honda Research Institute and a Google Daydream Research Award.</p>
+		    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

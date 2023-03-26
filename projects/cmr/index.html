@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+    /* Color scheme stolen from Sergey Karayev */
+    
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+    
+    a:focus, a:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
+
+    h1 { 
+       display: block;
+       font-size: 2em;
+       margin-top: 0.67em;
+       margin-bottom: 0.67em;
+       margin-left: 0;
+       margin-right: 0;
+       font-weight: 500;
+    }
+
+    h2 { 
+       display: block;
+       font-size: 1.5em;
+       margin-top: 0.83em;
+       margin-bottom: 0.83em;
+       margin-left: 0;
+       margin-right: 0;
+       font-weight: 500;
+    }
+
+    td,
+    th,
+    tr,
+    p,
+    body {
+      font-family: Helvetica, sans-serif;
+      font-size: 14px
+    }
+
+    a {
+      font-family: Helvetica, sans-serif;
+      font-size: 14px
+    }
+    
+    strong {
+      font-family: Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    
+    heading {
+      font-family: Helvetica, sans-serif;
+      font-size: 22px;
+    }
+    
+    papertitle {
+      font-family: Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700
+    }
+    
+    name {
+      font-family: Verdana, sans-serif;
+      font-size: 32px;
+    }
+    
+    .one {
+      width: 160px;
+      height: 160px;
+      position: relative;
+    }
+    
+    .two {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+    
+    .fade {
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
+    }
+    
+    span.highlight {
+      background-color: #ffffd0;
+    }
+    hr {
+	width: 100%;
+	border: 0;
+	height: 2px;
+	background: #000;
+	opacity: 0.2;
+    }
+  </style>
+    
+
+<title	align="center">Convolutional Mesh Regression for Single-Image Human Shape Reconstruction</title>
+</head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106409174-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-106409174-1');
+  </script>
+<body>
+  <table width=65% border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+	<center>
+	<h1>Convolutional Mesh Regression for Single-Image Human Shape Reconstruction</h2>
+	</center>
+	<h2  align="center"><a href="https://www.seas.upenn.edu/~nkolot/">Nikos Kolotouros</a> &nbsp &nbsp &nbsp <a href="https://www.seas.upenn.edu/~pavlakos/">Georgios Pavlakos</a> &nbsp &nbsp &nbsp <a href="http://www.cis.upenn.edu/~kostas/">Kostas Daniilidis</a> </h2>
+
+	<div style="font-size:100%; text-align:left;">
+	<br>
+	<p style="text-align: center;">
+	<img width=15% src="files/gifs/im1103_img.jpg" />
+	<img width=15% src="files/gifs/im1103_gcnn.gif" />
+	<img width=15% src="files/gifs/im1103_smpl.gif" />
+	<img width=15% src="files/gifs/im1321_img.jpg" />
+	<img width=15% src="files/gifs/im1321_gcnn.gif" />
+	<img width=15% src="files/gifs/im1321_smpl.gif" />
+	</p>
+	<p style="text-align: center;">
+	<img width=15% src="files/gifs/im1072_img.jpg" />
+	<img width=15% src="files/gifs/im1072_gcnn.gif" />
+	<img width=15% src="files/gifs/im1072_smpl.gif" />
+	<img width=15% src="files/gifs/im1010_img.jpg" />
+	<img width=15% src="files/gifs/im1010_gcnn.gif" />
+	<img width=15% src="files/gifs/im1010_smpl.gif" />
+	</p>
+	<p style="text-align: left">
+	<em><b>Example reconstructions using our method.</b>
+	    With light pink color we indicate the regressed non-parametric shape and with light blue the SMPL model regressed from the former shape.
+	</em>
+	</p>
+	<hr>
+	<h2  align="center">Abstract</h2>
+	<p>
+	This paper addresses the problem of 3D human pose and shape estimation from a single image. Previous approaches consider a parametric model of the human body, SMPL, and attempt to regress the model parameters that give rise to a mesh consistent with image evidence. This parameter regression has been a very challenging task, with model-based approaches underperforming compared to nonparametric solutions in terms of pose estimation. In our work, we propose to relax this heavy reliance on the model's parameter space. We still retain the topology of the SMPL template mesh, but instead of predicting model parameters, we directly regress the 3D location of the mesh vertices. This is a heavy task for a typical network, but our key insight is that the regression becomes significantly easier using a Graph-CNN. This architecture allows us to explicitly encode the template mesh structure within the network and leverage the spatial locality the mesh has to offer. Image-based features are attached to the mesh vertices and the Graph-CNN is responsible to process them on the mesh structure, while the regression target for each vertex is its 3D location. Having recovered the complete 3D geometry of the mesh, if we still require a specific model parametrization, this can be reliably regressed from the vertices locations. We demonstrate the flexibility and the effectiveness of our proposed graph-based mesh regression by attaching different types of features on the mesh vertices. In all cases, we outperform the comparable baselines relying on model parameter regression, while we also achieve state-of-the-art results among model-based pose estimation approaches.
+      </p>
+      <hr>
+      <h2  align="center">Publication</h2>
+      <papertitle>Convolutional Mesh Regression for Single-Image Human Shape Reconstruction</papertitle>
+      <br>
+      <a href="https://www.seas.upenn.edu/~nkolot/"><b>Nikos Kolotouros</b></a>,
+      <a href="https://seas.upenn.edu/~pavlakos">Georgios Pavlakos</a>,
+      <a href="https://cis.upenn.edu/~kostas">Kostas Daniilidis</a>
+      <br>
+      <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2019 &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font>
+      <br>
+      <a href = "http://arxiv.org/abs/1905.03244">arxiv</a>
+      /
+      <a href = "https://www.seas.upenn.edu/~nkolot/projects/cmr/">project page</a>
+      /
+      <a href ="files/cmr-supp.pdf">supplementary</a>
+      /
+      <a href = "https://github.com/nkolot/GraphCMR/">code</a>
+      /
+      <a href="files/kolotouros2019cmr.bib">bibtex</a>
+      <br>
+      <br>
+      <h4  align="left">Citation</h2>
+      <p>
+      <tt>
+      @inproceedings{kolotouros2019cmr,<br />
+      &nbsp;Author = {Kolotouros, Nikos and Pavlakos, Georgios and Daniilidis, Kostas},<br />
+      &nbsp;Title = {Convolutional Mesh Regression for Single-Image Human Shape Reconstruction},<br />
+      &nbsp;Booktitle = {CVPR},<br />
+      &nbsp;Year = {2019}}
+      </tt>
+      </p>
+      <hr>
+      <h2  align="center">Model architecture</h2>
+      <div style="font-size:100%; text-align:center;">
+      <img width=100% src="files/model_architecture.png"/>
+      <p style="text-align:left">
+      <em><b> Convolutional Mesh Regression (CMR).</b>
+      Given an input image, an image-based CNN encodes it in a low dimensional feature vector.
+      This feature vector is embedded in the graph defined by the template human mesh by attaching it to the 3D coordinates of every vertex.
+      We then process it through a series of Graph Convolutional layers and regress the 3D vertex coordinates of the deformed mesh.</em>
+      </p>
+      </div>
+      <br>
+      <br>
+      <div style="font-size:100%; text-align:center;">
+      <img width=33% src="files/smpl_regressor.png" />
+      <br>
+      <p style="text-align:left">
+      <em><b>SMPL regressor</b>. Given a regressed 3D shape from the Graph CNN,
+      we can use a Multi-Layer Perceptron (MLP) to regress the SMPL parameters
+      and produce a shape that is consistent with the original non-parametric shape.</em>
+      </p>
+      </div>
+      <hr>
+      <h2  align="center">Results</h2>
+      <p>
+      <em><b>Shape reconstruction on 3DPW.</b>
+      We present some additional results on videos from the recent <a href=http://virtualhumans.mpi-inf.mpg.de/3DPW/>3DPW</a> dataset. We note that our network was not trained with data from this dataset. Also we do not perform any postprocessing, e.g., temporal smoothing. For the videos that show multiple people, we reconstructed the shape
+      of each person separately given the bounding boxes and then superimposed the shape reconstructions.
+      We use pink color for the regressed non-parametric shape and blue color for the SMPL model regressed from the former shape.
+      </em>
+      </p>
+      <p>
+      </p>
+      <p style="text-align: center;">
+      <video width=100% src="files/videos/outdoors_fencing_01_small.mp4" type="video/mp4" autoplay muted loop/>
+      </p>
+      <p style="text-align: center;">
+      <video width=100% src="files/videos/downtown_crossStreets_00_small.mp4" type="video/mp4" autoplay muted loop/>
+      </p>
+      <p style="text-align: center;">
+      <video width=100% src="files/videos/downtown_rampAndStairs_00_small.mp4" type="video/mp4" autoplay muted loop/>
+      </p>
+      <p style="text-align: center;">
+      <video width=100% src="files/videos/downtown_runForBus_00_small.mp4" type="video/mp4" autoplay muted loop/>
+      </p>
+      <p style="text-align: center;">
+      <video width=100% src="files/videos/downtown_warmWelcome_00_small.mp4" type="video/mp4" autoplay muted loop/>
+      </p>
+      <hr>
+      <div style="font-size:100%; text-align:left;">
+      <p style="text-align: left">
+      <em><b>Additional reconstructions on the LSP dataset.</b>
+	    As before, with light pink color we indicate the regressed non-parametric shape and with light blue the SMPL model regressed from the former shape.
+      </em>
+      </p>
+      <p style="text-align: center;">
+      <img width=15% src="files/gifs/im1054_img.jpg" />
+      <img width=15% src="files/gifs/im1054_gcnn.gif" />
+      <img width=15% src="files/gifs/im1054_smpl.gif" />
+      <img width=15% src="files/gifs/im1061_img.jpg" />
+      <img width=15% src="files/gifs/im1061_gcnn.gif" />
+      <img width=15% src="files/gifs/im1061_smpl.gif" />
+      </p>
+      <p style="text-align: center;">
+      <img width=15% src="files/gifs/im1070_img.jpg" />
+      <img width=15% src="files/gifs/im1070_gcnn.gif" />
+      <img width=15% src="files/gifs/im1070_smpl.gif" />
+      <img width=15% src="files/gifs/im1184_img.jpg" />
+      <img width=15% src="files/gifs/im1184_gcnn.gif" />
+      <img width=15% src="files/gifs/im1184_smpl.gif" />
+      </p>
+      <p style="text-align: center;">
+      <img width=15% src="files/gifs/im1002_img.jpg" />
+      <img width=15% src="files/gifs/im1002_gcnn.gif" />
+      <img width=15% src="files/gifs/im1002_smpl.gif" />
+      <img width=15% src="files/gifs/im1133_img.jpg" />
+      <img width=15% src="files/gifs/im1133_gcnn.gif" />
+      <img width=15% src="files/gifs/im1133_smpl.gif" />
+      </p>
+      <p style="text-align: center;">
+      <img width=15% src="files/gifs/im1367_img.jpg" />
+      <img width=15% src="files/gifs/im1367_gcnn.gif" />
+      <img width=15% src="files/gifs/im1367_smpl.gif" />
+      <img width=15% src="files/gifs/im1897_img.jpg" />
+      <img width=15% src="files/gifs/im1897_gcnn.gif" />
+      <img width=15% src="files/gifs/im1897_smpl.gif" />
+      </p>
+      <p style="text-align: center;">
+      <img width=15% src="files/gifs/im1570_img.jpg" />
+      <img width=15% src="files/gifs/im1570_gcnn.gif" />
+      <img width=15% src="files/gifs/im1570_smpl.gif" />
+      <img width=15% src="files/gifs/im1026_img.jpg" />
+      <img width=15% src="files/gifs/im1026_gcnn.gif" />
+      <img width=15% src="files/gifs/im1026_smpl.gif" />
+      </p>
+      <hr>
+      <h2  align="left">Acknowledgements</h2>
+      <p>
+      We gratefully appreciate support through the following grants:
+NSF-IIP-1439681 (I/UCRC), NSF-IIS-1703319, NSF MRI 1626008, ARL RCTA W911NF-10-2-0016, ONR N00014-17-1-2093, ARL DCIST CRA W911NF-17-2-0181, the DARPA-SRC C-BRIC, and by Honda Research Institute.
+      </p>
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Multiperson</title>
+    </head>
+    <body class="container" style="max-width:920px">
+        <!-- Title -->
+        <div>
+            <div class="row mt-5 mb-5">
+                <div class="col text-center">
+                    <p class="h3 font-weight-normal">Probabilistic Modeling for Human Mesh Recovery</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class="col text-center h5 font-weight-bold mb-1">
+		    <a class="col-md-3 col-xs-7" href="https://web.archive.org/web/20220902032429/https://www.seas.upenn.edu/~nkolot"><span>Nikos Kolotouros<sup>1</sup></span></a>
+		    <a class="col-md-3 col-xs-7" href="https://web.archive.org/web/20220902032429/https://geopavlakos.github.io/"><span>Georgios Pavlakos<sup>2</sup></span></a>
+		    <a class="col-md-3 col-xs-7" href="https://web.archive.org/web/20220902032429/http://www.seas.upenn.edu/~dineshj"><span>Dinesh Jayaraman<sup>1</sup></span></a>
+		    <a class="col-md-3 col-xs-7" href="https://web.archive.org/web/20220902032429/https://www.cis.upenn.edu/~kostas"><span>Kostas Daniilidis<sup>1</sup></span></a>
+            </div>
+
+            <!-- affiliations -->
+            <div class="row text-center mt-3 mb-3">
+		    <a class="col-md-6" href="https://web.archive.org/web/20220902032429/https://www.upenn.edu/"><span><sup>1</sup>University of Pennsylvania</span></a>
+		    <a class="col-md-6" href="https://web.archive.org/web/20220902032429/https://www.berkeley.edu/"><span><sup>2</sup>UC Berkeley</span></a>
+            </div>
+	    <div>
+      	    <img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/teaser.png"/>
+	    </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12 text-center col-sm-3">
+                    <div class="row mt-4">
+                        <a href="" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://web.archive.org/web/20220902032429/https://arxiv.org/abs/2108.11944" style="margin-right:10px">
+                                <span>[Arxiv]</span>
+                            </a>
+                            <a class="h5" href="files/prohmr-supp.pdf" style="margin-right:10px">
+                                <span>[Supplementary]</span>
+                            </a>
+                            <a class="h5" href="https://web.archive.org/web/20220902032429/https://github.com/nkolot/ProHMR" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/kolotouros2021prohmr.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <p class="h4 font-weight-bold ">Abstract</p>
+                      <p> 
+		      This paper focuses on the problem of 3D human reconstruction from 2D evidence. Although this is an inherently ambiguous problem, the majority of recent works avoid the uncertainty modeling and typically regress a single estimate for a given input. In contrast to that, in this work, we propose to embrace the reconstruction ambiguity and we recast the problem as learning a mapping from the input to a \textbf{distribution} of plausible 3D poses. Our approach is based on the normalizing flows model and offers a series of advantages. For conventional applications, where a single 3D estimate is required, our formulation allows for efficient mode computation. Using the mode leads to performance that is comparable with the state of the art among deterministic unimodal regression models. Simultaneously, since we have access to the likelihood of each sample, we demonstrate that our model is useful in a series of downstream tasks, where we leverage the probabilistic nature of the prediction as a tool for more accurate estimation. These tasks include reconstruction from multiple uncalibrated views, as well as human model fitting, where our model acts as a powerful image-based prior for mesh recovery. Our results validate the importance of probabilistic modeling, and indicate state-of-the-art performance across a variety of settings.
+                      </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture, explaination -->
+        <div>
+            <hr>
+            <div class="row text-center">
+                <div class="col">
+                    <p class="h2">Overview</p>
+                </div>
+            </div>
+
+	    <!--
+            <div class='row text-left'>
+                <div class='col'>
+			<p class='h5'><em> Architecture </em></p>
+	    	</div>
+	    </div>
+	    -->
+
+            <div class="row mt-3">
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-4">
+      	    	<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/fig_1.png"/>
+	    </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-5">
+                    <p class="text-break">
+			We propose to recast the problem of 3D human reconstruction as learning a mapping from the input to a distribution of 3D poses. The output distribution has high probability mass on a diverse set of poses that are consistent with the 2D evidence.
+                    </p>
+                </div>
+            </div>
+
+	    <!--
+            <div class='row text-left'>
+                <div class='col'>
+			<p class='h5'><em>Interpenetration loss</em></p>
+	    	</div>
+	    </div>
+	    -->
+
+            <div class="row mt-3">
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-5">
+                    <p class="text-break">
+In the typical case of 3D mesh regression, we can naturally use the mode of the distribution and perform on par with approaches regressing a single 3D mesh.
+                    </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-4">
+      	    	<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/downstream_001.png"/>
+	    </div>
+            </div>
+
+            <div class="row mt-3">
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-5">
+                    <p class="text-break">
+When keypoints (or other types of 2D evidence) are available we can treat our model as an image-based prior and fit a human body model to the keypoints by combining it with a 2D reprojection term.
+                    </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-4">
+      	    	<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/downstream_002.png"/>
+	    </div>
+            </div>
+
+
+            <div class="row mt-3">
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-5">
+                    <p class="text-break">
+When multiple views are available, we can naturally consolidate all single-frame predictions by adding a cross-view consistency term.
+                    </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 align-middle mt-4">
+      	    	<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/downstream_003.png"/>
+	    </div>
+            </div>
+
+
+        </div>
+
+        <!-- Results, transformation -->
+        <div>
+            <hr>
+            <div class="row text-center">
+                <div class="col">
+                    <p class="h2">Architecture</p>
+			<div>
+      	    			<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/architecture.png"/>
+        		</div>
+                    	<div class="text-left">
+Our image encoder regresses a hidden vector which is used as the conditioning input to the flow model. In parallel, it is also decoded to shape and camera parameters. Right: Our flow model learns an invertible mapping which allows for two processing directions; depending on the desired function, we can perform both sampling and fast likelihood computation.
+                	</div>
+        	</div>
+       	    </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col">
+                    <p class="h2">Results</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div>
+			<div>
+      	    			<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/samples.png"/>
+        		</div>
+                    	<div class="text-center">
+				<strong>Samples from the learned distribution</strong>. The pink colored meshes correponds to the mode of the distribution.
+                	</div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div>
+			<div>
+      	    			<img width="100%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/smplify.png"/>
+        		</div>
+                    	<div class="text-center">
+				<strong>Model fitting results</strong>. Pink: Regression. Green: ProHMR + fitting. Grey: Regression + SMPLify.
+                	</div>
+                </div>
+            </div>
+            <hr>
+            <div class="row text-center">
+		<div>
+		<a><video width="90%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/video_1.mp4" , type="video/mp4" autoplay muted loop/></video></a>
+		<a><video width="90%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/video_2.mp4" , type="video/mp4" autoplay muted loop/></video></a>
+		<a><video width="90%" src="/web/20220902032429im_/https://www.seas.upenn.edu/~nkolot/projects/prohmr/files/video_3.mp4" , type="video/mp4" autoplay muted loop/></video></a>
+                <div class="text-center">
+			<strong>Aditional fitting results</strong>. Please note that these are per-frame fitting results without any postprocessing.
+                </div>
+		</div>
+            </div>
+        </div>
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class="row mb-5 text-center">
+                <div class="col">
+                    <p class="h2">Acknowledgements</p>
+		    <div class="text-left">
+		    <p>NK and KD gratefully appreciate support through the following grants: ARO W911NF-20-1-0080, NSF IIS 1703319, NSF TRIPODS 1934960, NSF CPS 2038873,  ONR N00014-17-1-2093, the DARPA-SRC C-BRIC, and by Honda Research Institute. GP is supported by BAIR sponsors.
+		    <p>The design of this project page was based on <a href="https://web.archive.org/web/20220902032429/https://www.guandaoyang.com/PointFlow/">this</a> website.
+		    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
