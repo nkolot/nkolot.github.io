@@ -22,7 +22,7 @@
   abstract={This paper focuses on the problem of 3D human reconstruction from 2D evidence. Although this is an inherently ambiguous problem, the majority of recent works avoid the uncertainty modeling and typically regress a single estimate for a given input. In contrast to that, in this work, we propose to embrace the reconstruction ambiguity and we recast the problem as learning a mapping from the input to a distribution of plausible 3D poses. Our approach is based on the normalizing flows model
       and offers a series of advantages. For conventional applications, where a single 3D estimate is required, our formulation allows for efficient mode computation. Using the mode leads to performance that is comparable with the state of the art among deterministic unimodal regression models. Simultaneously, since we have access to the likelihood of each sample, we demonstrate that our model is useful in a series of downstream tasks, where we leverage the probabilistic nature of the prediction
           as a tool for more accurate estimation. These tasks include reconstruction from multiple uncalibrated views, as well as human model fitting, where our model acts as a powerful image-based prior for mesh recovery. Our results validate the importance of probabilistic modeling, and indicate state-of-the-art performance across a variety of settings. Code and models are available at: https://www.nikoskolot.com/projects/prohmr.},
-  website = {projects/prohmr/},
+  website = {/projects/prohmr/},
   pdf = {https://arxiv.org/pdf/2108.11944},
   code = {https://github.com/nkolot/ProHMR},
   supp={https://openaccess.thecvf.com/content/ICCV2021/supplemental/Kolotouros_Probabilistic_Modeling_for_ICCV_2021_supplemental.pdf},
@@ -88,7 +88,7 @@
       huge amounts of supervision. In this work, instead of investigating which approach is better, our key insight is that the two paradigms can form a strong collaboration. A reasonable, directly regressed estimate from the network can initialize the iterative optimization making the fitting faster and more accurate. Similarly, a pixel accurate fit from iterative optimization can act as strong supervision for the network. This is the core of our proposed approach SPIN (SMPL oPtimization IN the
               loop). The deep network initializes an iterative optimization routine that fits the body model to 2D joints within the training loop, and the fitted estimate is subsequently used to supervise the network. Our approach is self-improving by nature, since better network estimates can lead the optimization to better solutions, while more accurate optimization fits provide better supervision for the network. We demonstrate the effectiveness of our approach in different settings, where
           3D ground truth is scarce, or not available, and we consistently outperform the state-of-the-art model-based pose estimation approaches by significant margins.},
-  website = {projects/spin/},
+  website = {/projects/spin/},
   pdf = {https://arxiv.org/abs/1909.12828},
   code = {https://github.com/nkolot/SPIN},
   supp = {https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Kolotouros_Learning_to_Reconstruct_ICCV_2019_supplemental.pdf},
@@ -124,7 +124,7 @@
       reliance on the model's parameter space. We still retain the topology of the SMPL template mesh, but instead of predicting model parameters, we directly regress the 3D location of the mesh vertices. This is a heavy task for a typical network, but our key insight is that the regression becomes significantly easier using a Graph-CNN. This architecture allows us to explicitly encode the template mesh structure within the network and leverage the spatial locality the mesh has to offer.
           Image-based features are attached to the mesh vertices and the Graph-CNN is responsible to process them on the mesh structure, while the regression target for each vertex is its 3D location. Having recovered the complete 3D geometry of the mesh, if we still require a specific model parametrization, this can be reliably regressed from the vertices locations. We demonstrate the flexibility and the effectiveness of our proposed graph-based mesh regression by attaching different types of
           features on the mesh vertices. In all cases, we outperform the comparable baselines relying on model parameter regression, while we also achieve state-of-the-art results among model-based pose estimation approaches.},
-  website = {projects/cmr/},
+  website = {/projects/cmr/},
   pdf = {http://arxiv.org/pdf/1905.03244.pdf},
   code = {https://github.com/nkolot/GraphCMR/},
   supp = {https://www.seas.upenn.edu/~nkolot/projects/cmr/files/cmr-supp.pdf},
