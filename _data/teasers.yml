@@ -1,3 +1,9 @@
+vlogger:
+ img: vlogger_gif_web.gif
+ img_top: vlogger_gif_web.gif
+avatarpopup:
+  img: text_to_3d_teaser.png
+  img_top: text_to_3d_teaser.png
 dreamhuman:
   img: dreamhuman.jpg
   img_top: dreamhuman.gif
