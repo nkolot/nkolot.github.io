@@ -13,7 +13,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am Senior Research Scientist at [Google DeepMind](deepming.google) in Zurich working on Generative AI.
+I am Senior Research Scientist at [Google DeepMind](https://deepmind.google) in Zurich working on Generative AI.
 Currently I am working on Veo, Google DeepMind's video generation model.
 Previously I was part of [Google Research](research.google) for 2 years, where I worked on 3D generative modeling.
 
